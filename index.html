@@ -12,21 +12,22 @@
     https://fonts.googleapis.com
     https://fonts.gstatic.com
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat0;500;600;700&display=swap
+    https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;500;600;700&display=swap
 </head>
 
 <body>
 
-<header>
+<header class="header">
 
-    <div class="logo-container">
-        img/logo.png
+    <div class="logo">
+        IMG/logo.png
     </div>
 
-    <nav>
+    <nav class="menu">
         #inicioInicio</a>
-        <airmaLa Firma</a>
-        <a href="#equipo">Equipo  #areasServicios</a>
+        #firmaLa Firma</a>
+        #equipoEquipo</a>
+        #areasServicios</a>
         #contactoContacto</a>
     </nav>
 
@@ -34,9 +35,11 @@
 
 <section class="hero" id="inicio">
 
+    <div class="overlay"></div>
+
     <div class="hero-content">
 
-        img/logo.png
+        IMG/logo.png
 
         <h1>Martínez De Aza & Asociados</h1>
 
@@ -55,73 +58,79 @@
 
 </section>
 
-<section class="equipo-general">
+<section class="firma" id="firma">
 
-    img/equipo.jpg
+    <div class="container">
 
-</section>
+        <h2>La Firma</h2>
 
-<section id="firma">
+        <p>
+            Martínez De Aza & Asociados ofrece servicios legales con
+            profesionalismo, ética y compromiso, brindando soluciones
+            jurídicas confiables y acompañamiento personalizado en cada caso.
+        </p>
 
-    <h2>La Firma</h2>
-
-    <p>
-        Martínez De Aza & Asociados brinda servicios legales con ética,
-        profesionalismo y compromiso, ofreciendo soluciones jurídicas
-        efectivas en diversas áreas del Derecho.
-    </p>
+    </div>
 
 </section>
 
-<section id="equipo">
+<section class="equipo-portada">
 
-    <h2>Nuestro Equipo</h2>
+    IMG/equipo.jpg
 
-    <div class="team-grid">
+</section>
 
-        <div class="card">
-            img/rafael.jpg
+<section class="equipo" id="equipo">
 
-            <h3>
-                Lic. Rafael A. Martínez Candelario
-            </h3>
+    <div class="container">
 
-            <p>Socio</p>
-        </div>
+        <h2>Nuestro Equipo</h2>
 
-        <div class="card">
+        <div class="team-grid">
 
-            img/jesus.jpg
+            <div class="card">
 
-            <h3>
-                Lic. Jesús M. De Aza Alvarado
-            </h3>
+                IMG/rafael.jpg
 
-            <p>Socio</p>
+                <div class="card-content">
+                    <h3>Lic. Rafael A. Martínez Candelario</h3>
+                    <p>Socio</p>
+                </div>
 
-        </div>
+            </div>
 
-        <div class="card">
+            <div class="card">
 
-            img/yolenny.jpg
+                IMG/jesus.jpg
 
-            <h3>
-                Licda. Yolenny M. De Aza Sena
-            </h3>
+                <div class="card-content">
+                    <h3>Lic. Jesús M. De Aza Alvarado</h3>
+                    <p>Socio</p>
+                </div>
 
-            <p>Abogada</p>
+            </div>
 
-        </div>
+            <div class="card">
 
-        <div class="card">
+                IMG/yolenny.jpg
 
-            img/jose.jpg
+                <div class="card-content">
+                    <h3>Licda. Yolenny M. De Aza Sena</h3>
+                    <p>Abogada</p>
+                </div>
 
-            <h3>
-                Lic. José Morales Martínez
-            </h3>
+            </div>
 
-            <p>Abogado</p>
+            <div class="card">
+
+                IMG/jose.jpg
+
+                <div class="card-content">
+                    <h3>Lic. José Morales Martínez</h3>
+                    <p>Abogado</p>
+                </div>
+
+            </div>
 
         </div>
 
@@ -129,50 +138,58 @@
 
 </section>
 
-<section id="areas">
+<section class="areas" id="areas">
 
-    <h2>Áreas de Práctica</h2>
+    <div class="container">
 
-    <div class="areas-grid">
+        <h2>Áreas de Práctica</h2>
 
-        <div>Derecho Civil</div>
-        <div>Derecho Penal</div>
-        <div>Derecho Inmobiliario</div>
-        <div>Derecho Comercial</div>
-        <div>Derecho Administrativo</div>
-        <div>Derecho de Familia</div>
-        <div>Derecho Migratorio</div>
-        <div>Embargos y Ejecuciones</div>
+        <div class="areas-grid">
+
+            <div class="area">Derecho Civil</div>
+            <div class="area">Derecho Penal</div>
+            <div class="area">Derecho Inmobiliario</div>
+            <div class="area">Derecho Comercial</div>
+            <div class="area">Derecho Administrativo</div>
+            <div class="area">Derecho de Familia</div>
+            <div class="area">Derecho Migratorio</div>
+            <div class="area">Embargos y Ejecuciones</div>
+
+        </div>
 
     </div>
 
 </section>
 
-<section id="contacto">
+<section class="contacto" id="contacto">
 
-    <h2>Contacto</h2>
+    <div class="container">
 
-    <div class="contact-card">
+        <h2>Contacto</h2>
 
-        <p>
-            <strong>Lic. Rafael A. Martínez Candelario</strong><br>
-            849-360-2897
-        </p>
+        <div class="contact-box">
 
-        <p>
-            <strong>Lic. Jesús M. De Aza Alvarado</strong><br>
-            809-962-2696
-        </p>
+            <div>
+                <strong>Lic. Rafael A. Martínez Candelario</strong>
+                <span>849-360-2897</span>
+            </div>
 
-        <p>
-            <strong>Licda. Yolenny M. De Aza Sena</strong><br>
-            809-983-0525
-        </p>
+            <div>
+                <strong>Lic. Jesús M. De Aza Alvarado</strong>
+                <span>809-962-2696</span>
+            </div>
 
-        <p>
-            <strong>Lic. José Morales Martínez</strong><br>
-            809-873-0992
-        </p>
+            <div>
+                <strong>Licda. Yolenny M. De Aza Sena</strong>
+                <span>809-983-0525</span>
+            </div>
+
+            <div>
+                <strong>Lic. José Morales Martínez</strong>
+                <span>809-873-0992</span>
+            </div>
+
+        </div>
 
     </div>
 
@@ -180,10 +197,13 @@
 
 <footer>
 
-    img/logo.png
+    IMG/logo.png
 
     <p>Martínez De Aza & Asociados</p>
-    <p>Consultores Legales desde 1999</p>
+
+    <small>
+        Consultores Legales desde 1999
+    </small>
 
 </footer>
 
