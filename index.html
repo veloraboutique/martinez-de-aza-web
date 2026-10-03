@@ -8,10 +8,17 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com">
 
     <style>
+        :root{
+            --navy:#0f2544;
+            --gold:#b7903c;
+            --light:#f7f8fa;
+            --white:#ffffff;
+            --text:#2a2a2a;
+            --border:#e6e8eb;
+        }
 
         *{
             margin:0;
@@ -24,37 +31,36 @@
         }
 
         body{
-            font-family:'Montserrat',sans-serif;
-            color:#222;
-            background:#f8f8f8;
+            font-family:'Inter',sans-serif;
+            font-size:16px;
             line-height:1.7;
+            color:var(--text);
+            background:var(--light);
         }
 
         img{
-            max-width:100%;
             display:block;
+            max-width:100%;
         }
 
         .container{
-            width:min(1200px,90%);
-            margin:auto;
+            width:min(1200px,92%);
+            margin:0 auto;
         }
 
         .header{
-            background:#ffffff;
-            border-bottom:1px solid #e6e6e6;
+            background:var(--white);
+            border-bottom:1px solid var(--border);
             position:sticky;
             top:0;
-            z-index:1000;
+            z-index:100;
         }
 
         .header-inner{
-            width:min(1200px,90%);
-            margin:auto;
             display:flex;
             justify-content:space-between;
             align-items:center;
-            padding:16px 0;
+            padding:18px 0;
         }
 
         .brand{
@@ -71,123 +77,129 @@
             object-fit:contain;
         }
 
-        .brand span{
+        .brand-text{
             font-family:'Playfair Display',serif;
-            font-size:1.1rem;
             font-weight:700;
+            font-size:1.1rem;
         }
 
         .menu{
             display:flex;
-            gap:28px;
+            gap:30px;
         }
 
         .menu a{
             text-decoration:none;
-            color:#222;
+            color:var(--text);
             font-weight:600;
-            font-size:.95rem;
         }
 
         .hero{
             padding:70px 0;
-            background:white;
+            background:var(--white);
         }
 
         .hero-grid{
             display:grid;
-            grid-template-columns:1fr 1fr;
+            grid-template-columns:1.1fr 1fr;
             gap:50px;
             align-items:center;
         }
 
         .hero-content h1{
             font-family:'Playfair Display',serif;
-            font-size:3.5rem;
+            font-size:clamp(3rem,5vw,4rem);
             line-height:1.15;
-            margin-bottom:15px;
+            color:var(--navy);
+            margin-bottom:12px;
         }
 
         .hero-content h2{
             font-size:1.1rem;
-            color:#b88a1d;
-            margin-bottom:20px;
-            font-weight:600;
+            color:var(--gold);
+            margin-bottom:22px;
+            font-weight:700;
+            letter-spacing:.04em;
         }
 
         .hero-content p{
-            margin-bottom:25px;
-            color:#555;
+            max-width:650px;
+            margin-bottom:24px;
         }
 
         .hero-image img{
             border-radius:18px;
-            box-shadow:0 10px 30px rgba(0,0,0,.10);
+            box-shadow:0 15px 40px rgba(0,0,0,.12);
         }
 
         .btn{
             display:inline-block;
-            background:#b88a1d;
-            color:white;
+            background:var(--navy);
+            color:#fff;
             text-decoration:none;
-            padding:14px 24px;
+            padding:14px 26px;
             border-radius:8px;
             font-weight:600;
         }
 
         section{
-            padding:80px 0;
+            padding:90px 0;
         }
 
-        section h2{
+        h2{
             font-family:'Playfair Display',serif;
+            font-size:clamp(2.2rem,4vw,2.8rem);
+            color:var(--navy);
             text-align:center;
-            font-size:2.5rem;
             margin-bottom:20px;
-            color:#111;
         }
 
-        .intro-text{
+        .section-intro{
             text-align:center;
             max-width:850px;
-            margin:auto;
-            color:#555;
+            margin:0 auto 40px;
         }
 
-        .institutional{
-            background:white;
-        }
-
-        .institutional-grid{
+        .about-grid{
             display:grid;
             grid-template-columns:repeat(3,1fr);
-            gap:25px;
+            gap:24px;
             margin-top:40px;
         }
 
-        .institutional-card{
-            background:#f7f7f7;
-            padding:30px;
+        .about-card{
+            background:var(--white);
+            border:1px solid var(--border);
             border-radius:16px;
+            padding:28px;
         }
 
-        .institutional-card h3{
-            margin-bottom:12px;
+        .about-card h3{
             font-family:'Playfair Display',serif;
+            font-size:1.5rem;
+            color:var(--navy);
+            margin-bottom:10px;
+        }
+
+        .team{
+            background:var(--white);
         }
 
         .team-grid{
-            margin-top:50px;
             display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:30px;
+            grid-template-columns:repeat(4,1fr);
+            gap:24px;
+            margin-top:40px;
         }
 
         .card{
-            background:white;
+            background:var(--white);
+            border:1px solid var(--border);
             border-radius:18px;
             overflow:hidden;
-            box-shadow:0 8px 25px rgba(0,0,0,.08);
+            box-shadow:0 6px 20px rgba(0,0,0,.06);
+            display:flex;
+            flex-direction:column;
         }
 
         .card img{
@@ -198,58 +210,58 @@
 
         .card-content{
             padding:24px;
+            height:100%;
         }
 
         .card-content h3{
-            margin-bottom:10px;
             font-size:1.1rem;
+            margin-bottom:10px;
+            color:var(--navy);
         }
 
-        .card-content p{
-            color:#555;
-            font-size:.95rem;
-        }
-
-        .areas{
-            background:white;
+        .card-content strong{
+            display:block;
+            margin-top:10px;
+            color:var(--gold);
+            font-size:.9rem;
         }
 
         .areas-grid{
-            margin-top:40px;
             display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-            gap:18px;
+            grid-template-columns:repeat(5,1fr);
+            gap:16px;
+            margin-top:40px;
         }
 
         .area{
-            background:#0d2342;
+            background:var(--navy);
             color:white;
-            text-align:center;
-            padding:20px;
             border-radius:12px;
+            text-align:center;
+            padding:18px;
             font-weight:600;
         }
 
         .closing{
-            text-align:center;
+            background:var(--white);
         }
 
-        .closing p{
+        .closing-box{
             max-width:900px;
-            margin:auto;
-            color:#555;
+            margin:0 auto;
+            text-align:center;
         }
 
         footer{
-            background:#111;
+            background:var(--navy);
             color:white;
             text-align:center;
-            padding:50px 20px;
+            padding:60px 20px;
         }
 
         footer img{
             width:80px;
-            margin:0 auto 15px;
+            margin:0 auto 16px;
         }
 
         footer h3{
@@ -257,33 +269,26 @@
             margin-bottom:10px;
         }
 
-        footer p{
-            color:#d0d0d0;
-        }
-
-        @media(max-width:900px){
+        @media (max-width:1024px){
 
             .hero-grid{
                 grid-template-columns:1fr;
             }
 
-            .institutional-grid{
+            .team-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+            .areas-grid{
+                grid-template-columns:repeat(3,1fr);
+            }
+
+            .about-grid{
                 grid-template-columns:1fr;
             }
+        }
 
-            .hero-content h1{
-                font-size:2.5rem;
-                text-align:center;
-            }
-
-            .hero-content h2,
-            .hero-content p{
-                text-align:center;
-            }
-
-            .hero-content{
-                text-align:center;
-            }
+        @media (max-width:768px){
 
             .header-inner{
                 flex-direction:column;
@@ -293,29 +298,46 @@
             .menu{
                 flex-wrap:wrap;
                 justify-content:center;
+                gap:16px;
             }
 
+            .team-grid{
+                grid-template-columns:1fr;
+            }
+
+            .areas-grid{
+                grid-template-columns:1fr 1fr;
+            }
+
+            section{
+                padding:70px 0;
+            }
         }
 
+        @media (max-width:480px){
+
+            .areas-grid{
+                grid-template-columns:1fr;
+            }
+        }
     </style>
 </head>
 
 <body>
 
 <header class="header">
-    <div class="header-inner">
+    <div class="container header-inner">
 
         #inicio
             img/logo.png
-            <span>Martínez De Aza &amp; Asociados</span>
+            <span class="brand-text">Martínez De Aza &amp; Asociados</span>
         </a>
 
         <nav class="menu">
             #inicioInicio</a>
             #firmaLa Firma</a>
-            #equipoEquipo</a>
+            #equipoEquipo Legal</a>
             #areasÁreas de Práctica</a>
-            #institucionalCompromiso</a>
         </nav>
 
     </div>
@@ -323,7 +345,7 @@
 
 <main>
 
-    <section id="inicio" class="hero">
+    <section class="hero" id="inicio">
 
         <div class="container">
 
@@ -333,60 +355,66 @@
 
                     <h1>Martínez De Aza &amp; Asociados</h1>
 
-                    <h2>Consultores Legales desde 1999</h2>
+                    <h2>CONSULTORES LEGALES DESDE 1999</h2>
 
                     <p>
-                        Firma jurídica comprometida con la excelencia profesional,
-                        la ética, la representación legal efectiva y la protección
-                        de los derechos e intereses de sus clientes.
+                        Firma jurídica comprometida con la excelencia profesional, la ética,
+                        la defensa de los derechos de sus clientes y la búsqueda de soluciones
+                        jurídicas efectivas para personas, familias y empresas.
                     </p>
 
-                    <a href="#                      Conozca Nuestro Equipo
+                    #equipo
+                        Conozca Nuestro Equipo
                     </a>
 
                 </div>
 
                 <figure class="hero-image">
-                    <img src="img/equipo.jpg" alt="Equipo profesional de Martínez De Aza & /div>
+                    img/equipo.jpg
+                </figure>
+
+            </div>
+
+        </div>
 
     </section>
 
-    <section id="firma" class="institutional">
+    <section id="firma">
 
         <div class="container">
 
             <h2>Quiénes Somos</h2>
 
-            <p class="intro-text">
-                Martínez De Aza &amp; Asociados ofrece servicios legales con profesionalismo,
-                ética y compromiso, brindando soluciones jurídicas efectivas en diversas áreas
-                del Derecho mediante una atención personalizada y cercana.
+            <p class="section-intro">
+                Martínez De Aza &amp; Asociados brinda servicios legales con profesionalismo,
+                ética y compromiso, ofreciendo soluciones jurídicas efectivas mediante una
+                atención personalizada y una sólida práctica profesional.
             </p>
 
-            <div class="institutional-grid">
+            <div class="about-grid">
 
-                <article class="institutional-card">
+                <article class="about-card">
                     <h3>Historia</h3>
                     <p>
                         Consultores legales con trayectoria profesional desde 1999,
-                        comprometidos con la defensa jurídica responsable y la excelencia
-                        en el servicio.
+                        dedicados al ejercicio responsable y profesional del Derecho.
                     </p>
                 </article>
 
-                <article class="institutional-card">
+                <article class="about-card">
                     <h3>Misión</h3>
                     <p>
-                        Brindar asesoría y representación legal con altos estándares
-                        éticos y profesionales, protegiendo los intereses de cada cliente.
+                        Ofrecer asesoría y representación jurídica de calidad,
+                        protegiendo los intereses de nuestros clientes con seriedad,
+                        preparación y compromiso.
                     </p>
                 </article>
 
-                <article class="institutional-card">
+                <article class="about-card">
                     <h3>Valores</h3>
                     <p>
-                        Ética profesional, responsabilidad, integridad, confidencialidad,
-                        compromiso y respeto por la justicia.
+                        Ética profesional, responsabilidad, confidencialidad,
+                        integridad, compromiso con el cliente y respeto por la justicia.
                     </p>
                 </article>
 
@@ -396,21 +424,26 @@
 
     </section>
 
-    <section id="equipo">
+    <section id="equipo" class="team">
 
         <div class="container">
 
-            <h2>Nuestro Equipo Legal</h2>
+            <h2>Equipo Legal</h2>
 
             <div class="team-grid">
 
                 <article class="card">
 
-                    <img src="img/rafael.jpg" alt="Fotografía profesional de Rafael A. Martínez Candelario">
+                    img/rafael.jpg
 
                     <div class="card-content">
 
-                                                   Socio de la firma. Miembro del Colegio de Abogados de la República Dominicana.
+                        <h3>Lic. Rafael A. Martínez Candelario</h3>
+
+                        <p>
+                            Miembro del Colegio de Abogados de la República Dominicana.
+                            Socio de la firma y profesional dedicado a la representación
+                            y acompañamiento jurídico de sus clientes.
                         </p>
 
                     </div>
@@ -419,13 +452,16 @@
 
                 <article class="card">
 
-                    <img src="img/jesus.jpg" alt="Fotografía profesional detent">
+                    img/jesus.jpg
+
+                    <div class="card-content">
 
                         <h3>Lic. Jesús M. De Aza Alvarado</h3>
 
                         <p>
-                            Socio de la firma. Profesional dedicado a la representación
-                            legal y defensa de los intereses de sus clientes.
+                            Miembro del Colegio de Abogados de la República Dominicana.
+                            Socio de la firma comprometido con la defensa jurídica y la
+                            protección de los intereses de sus representados.
                         </p>
 
                     </div>
@@ -441,8 +477,10 @@
                         <h3>Licda. Yolenny M. De Aza Sena</h3>
 
                         <p>
-                            Experiencia en Derecho Civil, Comercial, Inmobiliario,
-                            de Familia, Administrativo y Migratorio.
+                            Especialidades: Derecho Civil, Derecho Comercial,
+                            Derecho Inmobiliario, Derecho de Familia,
+                            Derecho Administrativo, Derecho Migratorio,
+                            Jurisdicción Inmobiliaria y Embargos.
                         </p>
 
                     </div>
@@ -458,8 +496,9 @@
                         <h3>Lic. José Morales Martínez</h3>
 
                         <p>
-                            Experiencia en Derecho Penal, Civil, Inmobiliario,
-                            Bienes Raíces y Jurisdicción de Tierras.
+                            Especialidades: Derecho Penal, Derecho Civil,
+                            Derecho Inmobiliario, Bienes Raíces
+                            y Jurisdicción de Tierras.
                         </p>
 
                     </div>
@@ -472,7 +511,7 @@
 
     </section>
 
-    <section id="areas" class="areas">
+    <section id="areas">
 
         <div class="container">
 
@@ -497,18 +536,23 @@
 
     </section>
 
-    <section id="institucional" class="closing">
+    <section class="closing">
 
         <div class="container">
 
-            <h2>Compromiso Profesional</h2>
+            <div class="closing-box">
 
-            <p>
-                Nuestro ejercicio profesional se fundamenta en la ética, el compromiso
-                con cada cliente, la preparación jurídica constante y la búsqueda de
-                soluciones legales efectivas. Trabajamos con responsabilidad, confidencialidad
-                y dedicación, ofreciendo representación y acompañamiento en cada etapa del proceso legal.
-            </p>
+                <h2>Compromiso Institucional</h2>
+
+                <p>
+                    Nuestro ejercicio profesional se fundamenta en la ética,
+                    la confidencialidad, el compromiso con cada cliente y la
+                    defensa responsable de sus derechos e intereses. Trabajamos
+                    con dedicación para ofrecer representación legal efectiva y
+                    soluciones jurídicas confiables.
+                </p>
+
+            </div>
 
         </div>
 
@@ -518,10 +562,13 @@
 
 <footer>
 
-    <img src="img
+    img/logo.png
+
     <h3>Martínez De Aza &amp; Asociados</h3>
 
-    <p>Consultores Legales desde 1999</p>
+    <p>
+        Consultores Legales desde 1999
+    </p>
 
 </footer>
 
