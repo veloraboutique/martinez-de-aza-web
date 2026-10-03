@@ -1,52 +1,529 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Martínez De Aza & Asociados</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Martínez De Aza & Asociados | Consultores Legales</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            font-family:'Montserrat',sans-serif;
+            color:#222;
+            background:#f8f8f8;
+            line-height:1.7;
+        }
+
+        img{
+            max-width:100%;
+            display:block;
+        }
+
+        .container{
+            width:min(1200px,90%);
+            margin:auto;
+        }
+
+        .header{
+            background:#ffffff;
+            border-bottom:1px solid #e6e6e6;
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+
+        .header-inner{
+            width:min(1200px,90%);
+            margin:auto;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:16px 0;
+        }
+
+        .brand{
+            display:flex;
+            align-items:center;
+            gap:14px;
+            text-decoration:none;
+            color:#111;
+        }
+
+        .brand img{
+            width:52px;
+            height:52px;
+            object-fit:contain;
+        }
+
+        .brand span{
+            font-family:'Playfair Display',serif;
+            font-size:1.1rem;
+            font-weight:700;
+        }
+
+        .menu{
+            display:flex;
+            gap:28px;
+        }
+
+        .menu a{
+            text-decoration:none;
+            color:#222;
+            font-weight:600;
+            font-size:.95rem;
+        }
+
+        .hero{
+            padding:70px 0;
+            background:white;
+        }
+
+        .hero-grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:50px;
+            align-items:center;
+        }
+
+        .hero-content h1{
+            font-family:'Playfair Display',serif;
+            font-size:3.5rem;
+            line-height:1.15;
+            margin-bottom:15px;
+        }
+
+        .hero-content h2{
+            font-size:1.1rem;
+            color:#b88a1d;
+            margin-bottom:20px;
+            font-weight:600;
+        }
+
+        .hero-content p{
+            margin-bottom:25px;
+            color:#555;
+        }
+
+        .hero-image img{
+            border-radius:18px;
+            box-shadow:0 10px 30px rgba(0,0,0,.10);
+        }
+
+        .btn{
+            display:inline-block;
+            background:#b88a1d;
+            color:white;
+            text-decoration:none;
+            padding:14px 24px;
+            border-radius:8px;
+            font-weight:600;
+        }
+
+        section{
+            padding:80px 0;
+        }
+
+        section h2{
+            font-family:'Playfair Display',serif;
+            text-align:center;
+            font-size:2.5rem;
+            margin-bottom:20px;
+            color:#111;
+        }
+
+        .intro-text{
+            text-align:center;
+            max-width:850px;
+            margin:auto;
+            color:#555;
+        }
+
+        .institutional{
+            background:white;
+        }
+
+        .institutional-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:25px;
+            margin-top:40px;
+        }
+
+        .institutional-card{
+            background:#f7f7f7;
+            padding:30px;
+            border-radius:16px;
+        }
+
+        .institutional-card h3{
+            margin-bottom:12px;
+            font-family:'Playfair Display',serif;
+        }
+
+        .team-grid{
+            margin-top:50px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+        }
+
+        .card{
+            background:white;
+            border-radius:18px;
+            overflow:hidden;
+            box-shadow:0 8px 25px rgba(0,0,0,.08);
+        }
+
+        .card img{
+            width:100%;
+            height:320px;
+            object-fit:cover;
+        }
+
+        .card-content{
+            padding:24px;
+        }
+
+        .card-content h3{
+            margin-bottom:10px;
+            font-size:1.1rem;
+        }
+
+        .card-content p{
+            color:#555;
+            font-size:.95rem;
+        }
+
+        .areas{
+            background:white;
+        }
+
+        .areas-grid{
+            margin-top:40px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:18px;
+        }
+
+        .area{
+            background:#0d2342;
+            color:white;
+            text-align:center;
+            padding:20px;
+            border-radius:12px;
+            font-weight:600;
+        }
+
+        .closing{
+            text-align:center;
+        }
+
+        .closing p{
+            max-width:900px;
+            margin:auto;
+            color:#555;
+        }
+
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:50px 20px;
+        }
+
+        footer img{
+            width:80px;
+            margin:0 auto 15px;
+        }
+
+        footer h3{
+            font-family:'Playfair Display',serif;
+            margin-bottom:10px;
+        }
+
+        footer p{
+            color:#d0d0d0;
+        }
+
+        @media(max-width:900px){
+
+            .hero-grid{
+                grid-template-columns:1fr;
+            }
+
+            .institutional-grid{
+                grid-template-columns:1fr;
+            }
+
+            .hero-content h1{
+                font-size:2.5rem;
+                text-align:center;
+            }
+
+            .hero-content h2,
+            .hero-content p{
+                text-align:center;
+            }
+
+            .hero-content{
+                text-align:center;
+            }
+
+            .header-inner{
+                flex-direction:column;
+                gap:15px;
+            }
+
+            .menu{
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+        }
+
+    </style>
 </head>
+
 <body>
+
 <header class="header">
-<a class="brand" href="#inicio">
-<img src="img/logo.png" alt="Logo">
-<span>Martínez De Aza & Asociados</span>
-</a>
-<nav class="menu">
-<a href="#inicio">Inicio</a>
-<a href="#firma">La Firma</a>
-<a href="#equipo">Equipo</a>
-<a href="#areas">Servicios</a>
-<a href="#contacto">Contacto</a>
-</nav>
+    <div class="header-inner">
+
+        #inicio
+            img/logo.png
+            <span>Martínez De Aza &amp; Asociados</span>
+        </a>
+
+        <nav class="menu">
+            #inicioInicio</a>
+            #firmaLa Firma</a>
+            #equipoEquipo</a>
+            #areasÁreas de Práctica</a>
+            #institucionalCompromiso</a>
+        </nav>
+
+    </div>
 </header>
-<section id="inicio" class="hero">
-<div class="hero-content">
-<img class="hero-logo" src="img/logo.png" alt="Logo">
-<h1>Martínez De Aza & Asociados</h1>
-<h2>Consultores Legales desde 1999</h2>
-<p>Asesoría jurídica, representación legal y acompañamiento profesional para personas, familias y empresas.</p>
-<a href="#contacto" class="btn">Solicitar Consulta</a>
-</div>
-</section>
-<section id="firma" class="firma">
-<div class="container">
-<h2>La Firma</h2>
-<p>Martínez De Aza & Asociados ofrece servicios legales con profesionalismo, ética y compromiso, brindando soluciones jurídicas efectivas en diversas áreas del Derecho.</p>
-</div>
-</section>
-<section class="equipo-portada"><img src="img/equipo.jpg" alt="Equipo"></section>
-<section id="equipo" class="equipo"><div class="container"><h2>Nuestro Equipo</h2><div class="team-grid">
-<article class="card"><img src="img/rafael.jpg" alt="Rafael"><div class="card-content"><h3>Lic. Rafael A. Martínez Candelario</h3><p>Socio</p></div></article>
-<article class="card"><img src="img/jesus.jpg" alt="Jesús"><div class="card-content"><h3>Lic. Jesús M. De Aza Alvarado</h3><p>Socio</p></div></article>
-<article class="card"><img src="img/yolenny.jpg" alt="Yolenny"><div class="card-content"><h3>Licda. Yolenny M. De Aza Sena</h3><p>Abogada</p></div></article>
-<article class="card"><img src="img/jose.jpg" alt="José"><div class="card-content"><h3>Lic. José Morales Martínez</h3><p>Abogado</p></div></article>
-</div></div></section>
-<section id="areas" class="areas"><div class="container"><h2>Áreas de Práctica</h2><div class="areas-grid"><div class="area">Derecho Civil</div><div class="area">Derecho Penal</div><div class="area">Derecho Inmobiliario</div><div class="area">Derecho Comercial</div><div class="area">Derecho Administrativo</div><div class="area">Derecho de Familia</div><div class="area">Derecho Migratorio</div><div class="area">Embargos y Ejecuciones</div></div></div></section>
-<section id="contacto" class="contacto"><div class="container"><h2>Contacto</h2></div></section>
-<footer><img src="img/logo.png" alt="Logo"><h3>Martínez De Aza & Asociados</h3><p>Consultores Legales desde 1999</p></footer>
-<script src="script.js"></script>
-</body></html>
+
+<main>
+
+    <section id="inicio" class="hero">
+
+        <div class="container">
+
+            <div class="hero-grid">
+
+                <div class="hero-content">
+
+                    <h1>Martínez De Aza &amp; Asociados</h1>
+
+                    <h2>Consultores Legales desde 1999</h2>
+
+                    <p>
+                        Firma jurídica comprometida con la excelencia profesional,
+                        la ética, la representación legal efectiva y la protección
+                        de los derechos e intereses de sus clientes.
+                    </p>
+
+                    <a href="#                      Conozca Nuestro Equipo
+                    </a>
+
+                </div>
+
+                <figure class="hero-image">
+                    <img src="img/equipo.jpg" alt="Equipo profesional de Martínez De Aza & /div>
+
+    </section>
+
+    <section id="firma" class="institutional">
+
+        <div class="container">
+
+            <h2>Quiénes Somos</h2>
+
+            <p class="intro-text">
+                Martínez De Aza &amp; Asociados ofrece servicios legales con profesionalismo,
+                ética y compromiso, brindando soluciones jurídicas efectivas en diversas áreas
+                del Derecho mediante una atención personalizada y cercana.
+            </p>
+
+            <div class="institutional-grid">
+
+                <article class="institutional-card">
+                    <h3>Historia</h3>
+                    <p>
+                        Consultores legales con trayectoria profesional desde 1999,
+                        comprometidos con la defensa jurídica responsable y la excelencia
+                        en el servicio.
+                    </p>
+                </article>
+
+                <article class="institutional-card">
+                    <h3>Misión</h3>
+                    <p>
+                        Brindar asesoría y representación legal con altos estándares
+                        éticos y profesionales, protegiendo los intereses de cada cliente.
+                    </p>
+                </article>
+
+                <article class="institutional-card">
+                    <h3>Valores</h3>
+                    <p>
+                        Ética profesional, responsabilidad, integridad, confidencialidad,
+                        compromiso y respeto por la justicia.
+                    </p>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="equipo">
+
+        <div class="container">
+
+            <h2>Nuestro Equipo Legal</h2>
+
+            <div class="team-grid">
+
+                <article class="card">
+
+                    <img src="img/rafael.jpg" alt="Fotografía profesional de Rafael A. Martínez Candelario">
+
+                    <div class="card-content">
+
+                                                   Socio de la firma. Miembro del Colegio de Abogados de la República Dominicana.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="card">
+
+                    <img src="img/jesus.jpg" alt="Fotografía profesional detent">
+
+                        <h3>Lic. Jesús M. De Aza Alvarado</h3>
+
+                        <p>
+                            Socio de la firma. Profesional dedicado a la representación
+                            legal y defensa de los intereses de sus clientes.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="card">
+
+                    img/yolenny.jpg
+
+                    <div class="card-content">
+
+                        <h3>Licda. Yolenny M. De Aza Sena</h3>
+
+                        <p>
+                            Experiencia en Derecho Civil, Comercial, Inmobiliario,
+                            de Familia, Administrativo y Migratorio.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="card">
+
+                    img/jose.jpg
+
+                    <div class="card-content">
+
+                        <h3>Lic. José Morales Martínez</h3>
+
+                        <p>
+                            Experiencia en Derecho Penal, Civil, Inmobiliario,
+                            Bienes Raíces y Jurisdicción de Tierras.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="areas" class="areas">
+
+        <div class="container">
+
+            <h2>Áreas de Práctica</h2>
+
+            <div class="areas-grid">
+
+                <div class="area">Derecho Civil</div>
+                <div class="area">Derecho Penal</div>
+                <div class="area">Derecho Inmobiliario</div>
+                <div class="area">Derecho Comercial</div>
+                <div class="area">Derecho Administrativo</div>
+                <div class="area">Derecho de Familia</div>
+                <div class="area">Derecho Migratorio</div>
+                <div class="area">Jurisdicción Inmobiliaria</div>
+                <div class="area">Embargos y Ejecuciones</div>
+                <div class="area">Bienes Raíces</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="institucional" class="closing">
+
+        <div class="container">
+
+            <h2>Compromiso Profesional</h2>
+
+            <p>
+                Nuestro ejercicio profesional se fundamenta en la ética, el compromiso
+                con cada cliente, la preparación jurídica constante y la búsqueda de
+                soluciones legales efectivas. Trabajamos con responsabilidad, confidencialidad
+                y dedicación, ofreciendo representación y acompañamiento en cada etapa del proceso legal.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <img src="img
+    <h3>Martínez De Aza &amp; Asociados</h3>
+
+    <p>Consultores Legales desde 1999</p>
+
+</footer>
+
+</body>
+</html>
